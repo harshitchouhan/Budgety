@@ -1,0 +1,263 @@
+/*
+
+0 - 600px:        Phone
+600 - 900px:      Tab-port
+900px - 1200px:   Tab-land
+[1200 - 1800] is where our normal styles apply 
+1800px + :        Big desktop  
+
+$breakpoints arguments choices :
+- phone
+- tab-port
+- tab-land
+- big-desktop 
+
+1em = 16px
+ 
+*/
+/**********************************************
+*** GENERAL
+**********************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 26.56em) {
+    html {
+      font-size: 50%; } }
+
+body {
+  color: #555;
+  font-family: Open Sans;
+  height: 100vh;
+  font-weight: 400; }
+
+/**********************************************
+*** TOP PART
+**********************************************/
+.container {
+  display: flex;
+  flex-direction: column; }
+
+.top {
+  height: 50vh;
+  background-image: linear-gradient(to right BOTTOM, rgba(89, 89, 89, 0.85), rgba(13, 13, 13, 0.85)), 
+  url(back.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; }
+  @media only screen and (max-width: 48em) {
+    .top {
+      height: 70vh; } }
+
+.budget {
+  position: absolute;
+  width: 35rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff; }
+  .budget__title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 300; }
+  .budget__value {
+    font-weight: 300;
+    font-size: 4.6rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    letter-spacing: 2px; }
+  .budget__income {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #28B9B5;
+    margin-bottom: 1rem; }
+  .budget__expenses {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FF5049;
+    align-items: center; }
+  .budget__income, .budget__expenses {
+    padding: 1.2rem;
+    text-transform: uppercase; }
+  .budget__income--text, .budget__expenses--text {
+    font-size: 1.3rem;
+    color: #444; }
+  .budget__income--value, .budget__expenses--value {
+    letter-spacing: 1px;
+    font-size: 1.5rem; }
+  .budget__income--value {
+    margin-right: 4rem; }
+  .budget__expenses--value {
+    margin-left: auto; }
+  .budget__expenses--percentage {
+    margin-left: 1rem;
+    padding: .5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px; }
+
+/**********************************************
+*** BOTTOM PART
+**********************************************/
+/***** FORM *****/
+.add {
+  padding: 1.4rem;
+  border-bottom: 1px solid #e7e7e7;
+  background-color: #f7f7f7; }
+  .add__container {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .add__type {
+    width: 5.5rem;
+    border: 1px solid #e7e7e7;
+    height: 4.4rem;
+    font-size: 1.8rem;
+    color: inherit;
+    background-color: #fff;
+    margin-right: 1rem;
+    font-weight: 300;
+    transition: border 0.3s; }
+  .add__description, .add__value {
+    border: 1px solid #e7e7e7;
+    background-color: #fff;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1.4rem;
+    padding: 1.2rem 1.5rem;
+    margin-right: 1rem;
+    border-radius: .5rem;
+    transition: border 0.3s; }
+  .add__description {
+    width: 40rem; }
+  .add__value {
+    width: 10rem; }
+  .add__btn {
+    font-size: 3.5rem;
+    background: none;
+    border: none;
+    color: #28B9B5;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.1;
+    margin-left: 1rem; }
+  .add__btn:active {
+    transform: translateY(2px); }
+  .add__type:focus, .add__description:focus, .add__value:focus {
+    outline: none;
+    border: 1px solid #28B9B5; }
+  .add__btn:focus {
+    outline: none; }
+
+.container-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100rem;
+  margin: 0 auto 6rem auto; }
+  @media only screen and (max-width: 64em) {
+    .container-1 {
+      flex-direction: column;
+      margin: 0 auto;
+      width: 70rem; } }
+  @media only screen and (max-width: 48em) {
+    .container-1 {
+      padding: 5rem; } }
+  @media only screen and (max-width: 26.56em) {
+    .container-1 {
+      width: 40rem;
+      padding: 1rem; } }
+
+.income {
+  width: 47.5rem;
+  margin-right: 5rem;
+  margin-top: 5rem; }
+  .income__title {
+    color: #28B9B5; }
+  @media only screen and (max-width: 64em) {
+    .income {
+      width: 100%; } }
+
+.expenses {
+  width: 47.5rem;
+  margin-top: 5rem; }
+  .expenses__title {
+    color: #FF5049; }
+  @media only screen and (max-width: 64em) {
+    .expenses {
+      width: 100%; } }
+
+h2 {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem; }
+
+.item {
+  padding: 1.3rem;
+  border-bottom: 1px solid #e7e7e7;
+  font-size: 1.6rem;
+  display: flex; }
+  .item:first-child {
+    border-top: 1px solid #e7e7e7; }
+  .item:nth-child(even) {
+    background-color: #f7f7f7; }
+  .item__description {
+    margin-right: auto; }
+  .item__value {
+    transition: transform 0.3s; }
+  .item__percentage {
+    margin-left: 2rem;
+    transition: transform 0.3s;
+    font-size: 1.1rem;
+    background-color: #FFDAD9;
+    padding: 3px;
+    border-radius: 3px;
+    width: 3.2rem;
+    text-align: center; }
+  .item__delete--btn {
+    font-size: 2.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    display: none; }
+    .item__delete--btn:focus {
+      outline: none; }
+    .item__delete--btn:active {
+      transform: translateY(2px); }
+
+.income .item__value,
+.income .item__delete--btn {
+  color: #28B9B5; }
+
+.expenses .item__value,
+.expenses .item__percentage,
+.expenses .item__delete--btn {
+  color: #FF5049; }
+
+.item:hover .item__delete--btn {
+  display: block; }
+
+.item:hover .item__value {
+  transform: translateX(-2rem); }
+
+.item:hover .item__percentage {
+  transform: translateX(-2rem); }
+
+.red {
+  color: #FF5049 !important; }
+
+.red-focus:focus {
+  border: 1px solid #FF5049 !important; }
